@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoginRegAndEmailVerificationBackendApplication {
+public class LoginMain {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoginRegAndEmailVerificationBackendApplication.class, args);
+        SpringApplication.run(LoginMain.class, args);
     }
 
 }
