@@ -1,6 +1,7 @@
 package hu.markmuhari.login_reg_and_email_verification_backend.registration;
 
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class RegistrationController {
 
-    private RegistrationService registrationService;
-
+    private final RegistrationService registrationService;
+    @PostMapping
     public String register(@RequestBody RegistrationRequest request) {
-        return RegistrationService.register(request);
+        return registrationService.register(request);
     }
+
 }
