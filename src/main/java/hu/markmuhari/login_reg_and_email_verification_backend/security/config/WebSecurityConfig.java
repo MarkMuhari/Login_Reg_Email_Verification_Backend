@@ -1,5 +1,6 @@
 package hu.markmuhari.login_reg_and_email_verification_backend.security.config;
 
+
 import hu.markmuhari.login_reg_and_email_verification_backend.appuser.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -45,4 +46,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return provider;
     }
 }
-

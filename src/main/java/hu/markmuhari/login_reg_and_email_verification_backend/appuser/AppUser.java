@@ -1,6 +1,5 @@
 package hu.markmuhari.login_reg_and_email_verification_backend.appuser;
 
-import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +8,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -20,11 +21,11 @@ public class AppUser implements UserDetails {
 
     @Id
     @SequenceGenerator( name = "app_user_sequence",
-                        sequenceName = "app_user_sequence",
-                        allocationSize = 1
+            sequenceName = "app_user_sequence",
+            allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator = "app_user_sequence")
+            generator = "app_user_sequence")
     private Long id;
     private String name;
     private String username;
