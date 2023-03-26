@@ -16,18 +16,17 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AppUserService implements UserDetailsService {
 
-    private final AppUserRepository appUserRepository;
-
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    private final ConfirmationTokenService confirmationTokenService;
     private final static String USER_NOT_FOUND_MSG = "User with email %s not found";
     private final static String EMAIL_ALREADY_TAKEN_MSG = "%s email already taken";
+    private final AppUserRepository appUserRepository;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final ConfirmationTokenService confirmationTokenService;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
         return appUserRepository.findByEmail(email)
-                .orElseThrow(()-> new UsernameNotFoundException(
+                .orElseThrow(() -> new UsernameNotFoundException(
                         String.format(USER_NOT_FOUND_MSG, email)));
     }
 

@@ -8,7 +8,6 @@ public class LoginMain {
 
     public static void main(String[] args) {
         SpringApplication.run(LoginMain.class, args);
-        System.out.println("Elindult");
     }
 
 }

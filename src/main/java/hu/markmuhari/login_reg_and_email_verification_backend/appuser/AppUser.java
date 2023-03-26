@@ -20,7 +20,7 @@ import java.util.Collections;
 public class AppUser implements UserDetails {
 
     @Id
-    @SequenceGenerator( name = "app_user_sequence",
+    @SequenceGenerator(name = "app_user_sequence",
             sequenceName = "app_user_sequence",
             allocationSize = 1
     )
@@ -54,7 +54,6 @@ public class AppUser implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
-
         return Collections.singletonList(authority);
     }
 
@@ -70,6 +69,7 @@ public class AppUser implements UserDetails {
     public String getLastName() {
         return lastName;
     }
+
     @Override
     public String getUsername() {
         return email;
